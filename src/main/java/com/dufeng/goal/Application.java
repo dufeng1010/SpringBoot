@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class Application 
+public class Application implements CommandLineRunner
 {
     public static void main( String[] args )
     {
@@ -26,5 +26,15 @@ public class Application
             }
         };
         
+    }
+
+    /**
+     * 当applicatoin context加载之后，会执行这个方法
+     */
+    @Override
+    public void run(String... strings) throws Exception {
+        for(int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
     }
 }
