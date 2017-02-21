@@ -1,4 +1,4 @@
-package com.dufeng.goal.Controller;
+package com.dufeng.goal.controller;
 
 import java.util.List;
 
