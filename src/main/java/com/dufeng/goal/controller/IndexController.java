@@ -2,6 +2,7 @@ package com.dufeng.goal.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -17,6 +18,8 @@ import com.dufeng.goal.service.IndexService;
 @Controller
 public class IndexController {
     
+    private Logger logger = Logger.getLogger(IndexController.class);
+    
     @Autowired
     private IndexService helloService;
     
@@ -25,6 +28,7 @@ public class IndexController {
     
     @RequestMapping("/")
     public String index() {
+        logger.info("yandufeng:yandufeng");
         for(int i = 0; i < 5; i++) {
             stringRedisTemplate.convertAndSend("chat", "hello fengfengzai!");
         }
