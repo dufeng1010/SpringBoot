@@ -1,10 +1,10 @@
 package com.dufeng.goal.domain;
 
-public class HelloMessage {
+public class Message {
     
     private String name;
 
-    public HelloMessage() {
+    public Message() {
     }
 
     public String getName() {

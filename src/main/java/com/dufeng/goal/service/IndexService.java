@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.dufeng.goal.domain.User;
 
 @Service
-public class HelloService {
+public class IndexService {
     
     @Autowired
     private JdbcTemplate jdbcTemplate;
