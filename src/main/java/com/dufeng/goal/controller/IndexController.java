@@ -10,15 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dufeng.goal.domain.Greeting;
-import com.dufeng.goal.domain.HelloMessage;
+import com.dufeng.goal.domain.Message;
 import com.dufeng.goal.domain.User;
-import com.dufeng.goal.service.HelloService;
+import com.dufeng.goal.service.IndexService;
 
 @Controller
-public class HelloController {
+public class IndexController {
     
     @Autowired
-    private HelloService helloService;
+    private IndexService helloService;
     
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -37,7 +37,7 @@ public class HelloController {
     
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    public Greeting greeting(HelloMessage message) throws Exception {
+    public Greeting greeting(Message message) throws Exception {
         Thread.sleep(1000);
         return new Greeting(1, message.getName());
     }
